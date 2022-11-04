@@ -1,0 +1,27 @@
+.inputBox {
+    background-color: #1c1d3d;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.toDoInput {
+    width: 250px;
+    height: 27px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+}
+.addBtn {
+    height: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    background-color: #f19035;
+    border: none;
+}
