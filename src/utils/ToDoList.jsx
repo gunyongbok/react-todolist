@@ -6,10 +6,19 @@ function ToDoList({ item, onUpdate, onDelete }) {
     const handleDelete = () => {
         onDelete(item);
     };
+    const handleStatus = (e) => {
+        const status = e.target.checked ? 'completed' : 'active';
+        onUpdate({ ...item, status });
+    };
     return (
         <>
             <li>
-                <input type="checkbox" id="checkbox" />
+                <input
+                    type="checkbox"
+                    id="checkbox"
+                    checked={status === 'completed'}
+                    onChange={handleStatus}
+                />
                 <label htmlFor="checkbox">{text}</label>
                 <button onClick={handleDelete}>
                     <BsTrash />
