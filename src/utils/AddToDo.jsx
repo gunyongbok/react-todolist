@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import styles from '../css/AddToDo.module.css';
 
 function AddToDo({ onAdd }) {
@@ -9,7 +10,7 @@ function AddToDo({ onAdd }) {
         if (text === '') {
             alert('Write Please');
         }
-        onAdd({ id: '3', text, status: 'active' });
+        onAdd({ id: uuidv4(), text, status: 'active' });
     };
     const onChange = (e) => {
         setText(e.target.value);
