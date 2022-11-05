@@ -3,11 +3,8 @@ import styles from '../css/ToDoMain.module.css';
 import AddToDo from './AddToDo';
 import ToDoList from './ToDoList';
 
-function ToDoMain() {
-    const [toDo, setToDo] = useState([
-        { id: '1', text: '123', status: 'active' },
-        { id: '2', text: '123', status: 'active' },
-    ]);
+function ToDoMain({ filter }) {
+    const [toDo, setToDo] = useState([]);
     const onAdd = (newToDo) => {
         setToDo([...toDo, newToDo]);
     };
@@ -17,11 +14,12 @@ function ToDoMain() {
     const onDelete = (deleted) => {
         setToDo(toDo.filter((t) => t.id !== deleted.id));
     };
+    const filteredToDo = showFilteredList(toDo, filter);
     console.log(toDo);
     return (
         <div className={styles.container}>
             <ul>
-                {toDo.map((item) => (
+                {filteredToDo.map((item) => (
                     <ToDoList
                         key={item.id}
                         item={item}
@@ -35,3 +33,10 @@ function ToDoMain() {
     );
 }
 export default ToDoMain;
+
+function showFilteredList(toDo, filter) {
+    if (filter === 'all') {
+        return toDo;
+    }
+    return toDo.filter((t) => t.status === filter);
+}
