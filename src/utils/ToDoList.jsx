@@ -12,15 +12,17 @@ function ToDoList({ item, onUpdate, onDelete }) {
     };
     return (
         <>
-            <li>
+            <li className={styles.toDoList}>
                 <input
                     type="checkbox"
                     id="checkbox"
                     checked={status === 'completed'}
                     onChange={handleStatus}
                 />
-                <label htmlFor="checkbox">{text}</label>
-                <button onClick={handleDelete}>
+                <label className={styles.label} htmlFor="checkbox">
+                    {text}
+                </label>
+                <button className={styles.trashBtn} onClick={handleDelete}>
                     <BsTrash />
                 </button>
             </li>

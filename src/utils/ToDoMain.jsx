@@ -18,7 +18,7 @@ function ToDoMain({ filter }) {
     console.log(toDo);
     return (
         <div className={styles.container}>
-            <ul>
+            <ul className={styles.toDoMain_ul}>
                 {filteredToDo.map((item) => (
                     <ToDoList
                         key={item.id}
