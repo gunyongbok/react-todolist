@@ -20,12 +20,7 @@ function ToDoMain({ filter }) {
         <div className={styles.container}>
             <ul className={styles.toDoMain_ul}>
                 {filteredToDo.map((item) => (
-                    <ToDoList
-                        key={item.id}
-                        item={item}
-                        onUpdate={onUpdate}
-                        onDelete={onDelete}
-                    />
+                    <ToDoList key={item.id} item={item} onUpdate={onUpdate} onDelete={onDelete} />
                 ))}
             </ul>
             <AddToDo onAdd={onAdd} />
