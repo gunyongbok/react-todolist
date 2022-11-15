@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from '../css/ToDoMain.module.css';
 import AddToDo from './AddToDo';
 import ToDoList from './ToDoList';
 
 function ToDoMain({ filter }) {
-    const [toDo, setToDo] = useState([]);
+    const [toDo, setToDo] = useState(getTodosFromLocalStorage);
     const onAdd = (newToDo) => {
         setToDo([...toDo, newToDo]);
     };
@@ -16,6 +16,11 @@ function ToDoMain({ filter }) {
     };
     const filteredToDo = showFilteredList(toDo, filter);
     console.log(toDo);
+
+    useEffect(() => {
+        localStorage.setItem('toDo', JSON.stringify(toDo));
+    }, [toDo]);
+
     return (
         <div className={styles.container}>
             <ul className={styles.toDoMain_ul}>
@@ -35,3 +40,8 @@ function showFilteredList(toDo, filter) {
     }
     return toDo.filter((t) => t.status === filter);
 }
+
+const getTodosFromLocalStorage = () => {
+    const toDos = localStorage.getItem('toDo');
+    return toDos ? JSON.parse(toDos) : [];
+};

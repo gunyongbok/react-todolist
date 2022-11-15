@@ -13,12 +13,7 @@ function ToDoList({ item, onUpdate, onDelete }) {
     return (
         <>
             <li className={styles.toDoList}>
-                <input
-                    type="checkbox"
-                    id="checkbox"
-                    checked={status === 'completed'}
-                    onChange={handleStatus}
-                />
+                <input className={styles.input} type="checkbox" id="checkbox" checked={status === 'completed'} onChange={handleStatus} />
                 <label className={styles.label} htmlFor="checkbox">
                     {text}
                 </label>
