@@ -6,7 +6,7 @@
 .toDoList .trashBtn {
     position: absolute;
     right: 0;
-    color: white;
+    color: var(--color-color);
     border: none;
     font-size: 15px;
     background-color: transparent;

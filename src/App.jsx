@@ -3,6 +3,7 @@ import styles from './css/App.module.css';
 import Header from './utils/Header';
 import { useState } from 'react';
 import { LightModeProvider } from './context/LightModeContext';
+import './css/index.css';
 
 const filters = ['all', 'completed', 'active'];
 

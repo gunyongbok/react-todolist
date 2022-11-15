@@ -3,13 +3,14 @@
     margin-right: 10px;
 }
 .header {
-    background-color: #1c1d3d;
+    background-color: var(--color--header-dark);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     height: 12%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 .header_ul {
     width: 20%;
@@ -23,4 +24,14 @@
 }
 .header_li button:focus {
     border-bottom: 1px solid #f19035;
+}
+.modeBtn {
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: var(--color-color);
 }

@@ -6,9 +6,9 @@ function Header({ filter, filters, changeFilter }) {
     const { lightMode, handleLightMode } = useLigthMode();
     return (
         <header className={styles.header}>
-            <button onClick={handleLightMode}>
-                {!lightMode && <HiMoon />}
-                {lightMode && <HiSun />}
+            <button className={styles.modeBtn} onClick={handleLightMode}>
+                {!lightMode && <HiSun />}
+                {lightMode && <HiMoon />}
             </button>
             <ul className={styles.header_ul}>
                 {filters.map((a, i) => (
